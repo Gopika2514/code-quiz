@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Codeing Quiz</title>
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
+    <!--Font awesome 5-->
+    <script src="https://kit.fontawesome.com/34b9bc8a79.js" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/style.css">
 
-<body>
-  <div class="scores">
-    <a href="highscores.html">View Highscores</a>
-  </div>
-  <div class="timer">
-    "Time: "
-    <span id="time">0</span>
-  </div>
-  <div class="wrapper">
-    <div id="start-screen" class="start">
-      <h1>Coding Quiz Challenge</h1>
-      <p>
-        "Try to answer the following code-related questions within the time limit.
-        Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
-      </p>
-      <button id="start">Start Quiz</button>
-    </div>
-    <div id="question" style="visibility:hidden">
-      <h2 id="question-text"></h2>
-      <div id="choices" class="choices"></div>
-    </div>
-    <div id="end-screen" style="visibility:hidden">
-      <h2>All done!</h2>
-      <p>
-        "Your final score is"
-        <span id="final-score"></span>
-        "."
-      </p>
-      <p>
-        "Enter initials: "
-        <input type="text" id="initials" max="3">
-        <button id="submit">Submit</button>
-      </p>
-    </div>
-    <div id="feedback" class="feedback hide"></div>
-  </div>
-  
+    <title>Codeing Quiz</title>
+  </head>
+  <body>
+   <!-- Main Quiz Text -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light mb-4">
+        <a class="navbar-brand" href="highscores.html">View Highscores</a> 
+        <div class="navbar-collapse" id="navbarText"></div>
+        <section class="navbar-text" id='restartButton'>
+            Time: 75seconds
+        </section>
+      </nav>
+    </header>
+    <main>
+      <section id="start" class="quiz-section">
+        <h1>Coding Quiz Challenge</h1>
+        <p class="card-text">
+          Try to answer the following code-related question within the time limit.
+              <br>
+          Keep in mind that incorrect answers will penalize your score/time             
+              <br>            
+          by ten seconds!
+        </p>
+        <button id="start-button">Start Quiz</button>
+      </section>
+      <section id="quiz-questions" class="hidden quiz-section">
+        <p id="timer">Time: <span id="time-remaining">0</span></p>
+        <h1 id="question">Quiz Question</h1>
+        <ul id="choices"></ul>
+      </section>
+      <section id="end" class="quiz-section hidden">
+        <h1 id="end-title">Quiz completed</h1>
+        <p id="score-text">You scored: <span id="score">0</span></p>
+        <form id="submit-score">
+          <label for="initials">Enter initials:</label>
+          <input type="text" id="initials">
+          <button type="submit">Submit</button>
+          <p id="error-message"></p>
+        </form>
+        <a href="index.html" class="back-button"><i class="fas fa-angle-left" aria-hidden="true"></i>Back to quiz</a>
+      </section>
+      <div>
+        <p id="correct" class="choice-status hidden"><i class="fas fa-check-circle" aria-hidden="true"></i>Correct!</p>
+        <p id="wrong" class="choice-status hidden"><i class="fas fa-times-circle" aria-hidden="true"></i>Wrong!</p>
+      </div>
+    </main>
 
-</body>
-<script src="./assets/js/script.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
 </html>
-
-
